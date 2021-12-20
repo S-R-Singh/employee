@@ -15,6 +15,10 @@ export class StepperComponent implements OnInit {
   firstFormGroup = this.fb.group({
     firstCtrl: ['', Validators.required],
   });
+
+  secondFormGroup = this.fb.group({
+    secondCtrl: ['', Validators.required],
+  });
   ngOnInit(): void { 
     
     
