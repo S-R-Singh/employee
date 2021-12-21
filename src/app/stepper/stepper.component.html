@@ -5,35 +5,398 @@
   <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <ng-template matStepLabel>Personal</ng-template>
+        <mat-card>
+            <mat-card-title align="Middle">Personal Details</mat-card-title>
+            <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+            <div>
+            <mat-form-field [style.width]="'30%'">
+                <mat-label >First Name</mat-label>
+                <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+            </mat-form-field>
+              <mat-form-field [style.width]="'30%'" >
+                <mat-label>Middle Name</mat-label>
+                <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <mat-form-field [style.width]="'28%'" >
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+              </mat-form-field></div> <!-- <br/> -->
+              <div>
+                <mat-form-field [style.width]="'30%'">
+                    <mat-label >Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="firstCtrl" required>
+                </mat-form-field>
+                  <mat-form-field [style.width]="'30%'" >
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput placeholder="Mobile" formControlName="firstCtrl" required>
+                  </mat-form-field>
+                  <mat-form-field [style.width]="'28%'" >
+                    <mat-label>Contact Number</mat-label>
+                    <input matInput placeholder="Landline" formControlName="firstCtrl" required>
+                  </mat-form-field></div>
+                  <!-- only 2 formfields -->
+                  <div></div>
+                    <mat-form-field [style.width]="'45%'">
+                        <mat-label >Birth Date</mat-label>
+                        <!-- <mat-label>Choose a date</mat-label> -->
+                        <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="firstCtrl" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker>
+                    </mat-datepicker>               
+                </mat-form-field>
+                
+                <mat-form-field [style.width]="'45%'">
+              
+                    <ngx-mat-file-input formControlName="requiredfile" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
+                    <mat-icon matSuffix>folder</mat-icon>
+                    <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
+                      Please select a file
+                    </mat-error> -->
+                    <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile')?.hasError('maxContentSize')">
+                      The total size must not exceed {{firstFormGroup.get('requiredfile')?.getError('maxContentSize').maxSize }} ({{firstFormGroup.get('requiredfile')?.getError('maxContentSize').actualSize
+                      }}).
+                    </mat-error> -->
+                  </mat-form-field>
+                      <div>
+                        <mat-form-field [style.width]="'45%'">
+                            <mat-label >Present Address</mat-label>
+                            <input matInput placeholder="Present Address" formControlName="firstCtrl" required>
+                        </mat-form-field>
+                          <mat-form-field [style.width]="'45%'" >
+                            <mat-label>Permanent Address</mat-label>
+                            <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
+                          </mat-form-field>
+                          </div>
+                          
+          </mat-card>
+        
+        
+           <!-- I took this out of card  <mat-card-actions>
+              <button mat-raised-button color="primary">LIKE</button>
+              <button mat-raised-button color="primary">SHARE</button>
+            </mat-card-actions> -->
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="file" matInput     placeholder="File" formControlName="firstCtrl" required>
+          </mat-form-field> --> 
+        <br/>
+          <div align="end">
+          <button mat-raised-button color="primary"  matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="firstFormGroup" label="Fill out your address"> 
+<!-- 2nd stepper screen ahead -->
+    <mat-step [stepControl]="firstFormGroup" label="Bank"> 
       <form [formGroup]="firstFormGroup">
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+        <mat-card>
+          <mat-card-title align="Middle">Bank Detail</mat-card-title>
+          <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+          <div>
+          <mat-form-field [style.width]="'45%'">
+              <mat-label >Bank Name</mat-label>
+              <input matInput placeholder="Bank Name" formControlName="firstCtrl" required>
+          </mat-form-field>
+            <mat-form-field [style.width]="'45%'" >
+              <mat-label>Account Name</mat-label>
+              <input matInput placeholder="Account Name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            </div> <!-- <br/> -->
+            <div>
+              <mat-form-field [style.width]="'45%'">
+                  <mat-label >Bank Account Number</mat-label>
+                  <input matInput placeholder="Bank Account NUmber" formControlName="firstCtrl" required>
+              </mat-form-field>
+                <mat-form-field [style.width]="'45%'" >
+                  <mat-label>IFSC Code</mat-label>
+                  <input matInput placeholder="IFSC Code" formControlName="firstCtrl" required>
+                </mat-form-field>
+               </div>
+                <!-- only 2 formfields -->
+                
+                  <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
+                    Please select a file
+                  </mat-error> -->
+                  <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile')?.hasError('maxContentSize')">
+                    The total size must not exceed {{firstFormGroup.get('requiredfile')?.getError('maxContentSize').maxSize }} ({{firstFormGroup.get('requiredfile')?.getError('maxContentSize').actualSize
+                    }}).
+                  </mat-error> -->
+                    <div>
+                      <mat-form-field [style.width]="'45%'">
+                          <mat-label >Aadhar Card Number</mat-label>
+                          <input matInput placeholder="Aadhar Card Number" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                        <mat-form-field [style.width]="'45%'" >
+                          <mat-label>Pan Card Number</mat-label>
+                          <input matInput placeholder="Pan Card Number" formControlName="firstCtrl" required>
+                        </mat-form-field>
+                        </div>
+                      </mat-card>
+
+        <div align="end">
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+<!-- 3rd stepper screen ahead -->
+<mat-step [stepControl]="firstFormGroup" label="Professional"> 
+    <form [formGroup]="firstFormGroup">
+      <mat-card>
+        <mat-card-title align="Middle">Professional Detail</mat-card-title>
+        <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+        <div>
+          <mat-form-field [style.width]="'45%'">
+              <mat-label >Designation</mat-label>
+              <input matInput placeholder="Designation" formControlName="firstCtrl" required>
+          </mat-form-field>
+            <mat-form-field [style.width]="'45%'" >
+              <mat-label>Department</mat-label>
+              <input matInput placeholder="Department" formControlName="firstCtrl" required>
+            </mat-form-field>
+            </div> <!-- <br/> -->
+            <div>
+              <!-- [formGroup]="firstFormGroup" -->
+              <mat-form-field [style.width]="'20%'">
+                  <mat-label>Experience</mat-label>
+                    <mat-select 
+                    formControlName="firstCtrl"
+                    name="exp">
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let exp of exps" [value]="exps.values">
+                        {{exp.viewValue}}
+                      </mat-option>
+                    </mat-select>
+              </mat-form-field>
+              <mat-form-field [style.width]="'20%'">
+                <mat-label>Experience</mat-label>
+                  <mat-select 
+                  formControlName="firstCtrl"
+                  name="exp">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let exp of exps" [value]="exps.values">
+                      {{exp.viewValue}}
+                    </mat-option>
+                  </mat-select>
+            </mat-form-field>
+                <mat-form-field [style.width]="'45%'" >
+                  <mat-label>Current Location</mat-label>
+                  <input matInput placeholder="Current Location" formControlName="firstCtrl" required>
+                </mat-form-field>
+                </div>
+              <!-- only 2 formfields -->
+              <div></div>
+                <mat-form-field [style.width]="'45%'">
+                    <mat-label >Skills</mat-label>
+                    <mat-select 
+                    formControlName="firstCtrl"
+                    name="exp">
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let exp of exps" [value]="exps.values">
+                        {{exp.viewValue}}
+                      </mat-option>
+                    </mat-select>               
+            </mat-form-field>
+            <mat-form-field [style.width]="'45%'">
+          
+                <ngx-mat-file-input formControlName="requiredfile" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
+                <mat-icon matSuffix>folder</mat-icon>
+                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
+                  Please select a file
+                </mat-error> -->
+                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile')?.hasError('maxContentSize')">
+                  The total size must not exceed {{firstFormGroup.get('requiredfile')?.getError('maxContentSize').maxSize }} ({{firstFormGroup.get('requiredfile')?.getError('maxContentSize').actualSize
+                  }}).
+                </mat-error> -->
+              </mat-form-field>
+             </mat-card>
+      <div align="end">
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
       </div>
+    </form>
+  </mat-step>
+<!-- 4rth stepper screen ahead -->
+<mat-step [stepControl]="firstFormGroup" label="Education"> 
+    <form [formGroup]="firstFormGroup">
+      <mat-card>
+        <mat-card-title align="Middle">Education Detail</mat-card-title>
+        <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+        <div>
+        <mat-form-field [style.width]="'30%'">
+            <mat-label >First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+        </mat-form-field>
+          <mat-form-field [style.width]="'30%'" >
+            <mat-label>Middle Name</mat-label>
+            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <mat-form-field [style.width]="'28%'" >
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+          </mat-form-field></div> <!-- <br/> -->
+          <div>
+            <mat-form-field [style.width]="'30%'">
+                <mat-label >Email</mat-label>
+                <input matInput placeholder="Email" formControlName="firstCtrl" required>
+            </mat-form-field>
+              <mat-form-field [style.width]="'30%'" >
+                <mat-label>Mobile Number</mat-label>
+                <input matInput placeholder="Mobile" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <mat-form-field [style.width]="'28%'" >
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Landline" formControlName="firstCtrl" required>
+              </mat-form-field></div>
+              <!-- only 2 formfields -->
+              <div></div>
+                <mat-form-field [style.width]="'45%'">
+                    <mat-label >Birth Date</mat-label>
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input matInput placeholder="Date" formControlName="firstCtrl" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker>
+                </mat-datepicker>               
+            </mat-form-field>
+            
+            <mat-form-field [style.width]="'45%'">
+          
+                <ngx-mat-file-input formControlName="requiredfile" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
+                <mat-icon matSuffix>folder</mat-icon>
+                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
+                  Please select a file
+                </mat-error> -->
+                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile')?.hasError('maxContentSize')">
+                  The total size must not exceed {{firstFormGroup.get('requiredfile')?.getError('maxContentSize').maxSize }} ({{firstFormGroup.get('requiredfile')?.getError('maxContentSize').actualSize
+                  }}).
+                </mat-error> -->
+              </mat-form-field>
+                  <div>
+                    <mat-form-field [style.width]="'45%'">
+                        <mat-label >Present Address</mat-label>
+                        <input matInput placeholder="Present Address" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                      <mat-form-field [style.width]="'45%'" >
+                        <mat-label>Permanent Address</mat-label>
+                        <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                      </div>
+                    </mat-card>
+      <div align="end">
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+<!-- 5th stepper screen ahead -->
+<mat-step [stepControl]="firstFormGroup" label="Experience"> 
+    <form [formGroup]="firstFormGroup">
+      <mat-card>
+        <mat-card-title align="Middle">Experience Detail</mat-card-title>
+        <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+        <div>
+        <mat-form-field [style.width]="'30%'">
+            <mat-label >First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+        </mat-form-field>
+          <mat-form-field [style.width]="'30%'" >
+            <mat-label>Middle Name</mat-label>
+            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <mat-form-field [style.width]="'28%'" >
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+          </mat-form-field></div> <!-- <br/> -->
+          <div>
+            <mat-form-field [style.width]="'30%'">
+                <mat-label >Email</mat-label>
+                <input matInput placeholder="Email" formControlName="firstCtrl" required>
+            </mat-form-field>
+              <mat-form-field [style.width]="'30%'" >
+                <mat-label>Mobile Number</mat-label>
+                <input matInput placeholder="Mobile" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <mat-form-field [style.width]="'28%'" >
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Landline" formControlName="firstCtrl" required>
+              </mat-form-field></div>
+              <!-- only 2 formfields -->
+              <div></div>
+                <mat-form-field [style.width]="'45%'">
+                    <mat-label >Birth Date</mat-label>
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input matInput placeholder="Date" formControlName="firstCtrl" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker>
+                </mat-datepicker>               
+            </mat-form-field>
+            
+            <mat-form-field [style.width]="'45%'">
+          
+                <ngx-mat-file-input formControlName="requiredfile" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
+                <mat-icon matSuffix>folder</mat-icon>
+                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
+                  Please select a file
+                </mat-error> -->
+                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile')?.hasError('maxContentSize')">
+                  The total size must not exceed {{firstFormGroup.get('requiredfile')?.getError('maxContentSize').maxSize }} ({{firstFormGroup.get('requiredfile')?.getError('maxContentSize').actualSize
+                  }}).
+                </mat-error> -->
+              </mat-form-field>
+                  <div>
+                    <mat-form-field [style.width]="'45%'">
+                        <mat-label >Present Address</mat-label>
+                        <input matInput placeholder="Present Address" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                      <mat-form-field [style.width]="'45%'" >
+                        <mat-label>Permanent Address</mat-label>
+                        <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                      </div>
+                    </mat-card>
+      <div align="end">
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+<!-- 6th stepper screen ahead -->
+
+<mat-step [stepControl]="firstFormGroup" label="Education"> 
+  <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Current Organization</ng-template>
+      <mat-card>
+        <mat-card-title align="Middle">Current Organization Detail</mat-card-title>
+              <!-- only 2 formfields -->
+              <div>
+                <mat-form-field [style.width]="'45%'">
+                    <mat-label >Joining Date</mat-label>
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input matInput placeholder="Date" formControlName="firstCtrl" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker>
+                </mat-datepicker>               
+            </mat-form-field>
+            <mat-form-field [style.width]="'45%'">
+              <mat-label >Next Appraisal Date</mat-label>
+              <!-- <mat-label>Choose a date</mat-label> -->
+              <input matInput placeholder="Date" formControlName="firstCtrl" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker>
+          </mat-datepicker>               
+      </mat-form-field>
+    </div>
+                  <div>
+                      <mat-form-field [style.width]="'45%'" >
+                        <mat-label>Current CTC</mat-label>
+                        <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                      </div>
+                    </mat-card>
+      <div align="end">
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+      </div>
+      </form>
     </mat-step>
   </mat-stepper>

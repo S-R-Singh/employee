@@ -53,6 +53,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 //import {MatF}
 const routeConfig: Routes=[
   {path:'', redirectTo: 'form', pathMatch:'full'},
@@ -71,7 +72,7 @@ FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
 
  
-
+    MaterialFileInputModule,
     A11yModule,
     CdkAccordionModule,
     ClipboardModule,
