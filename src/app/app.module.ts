@@ -8,7 +8,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 //import { matStepperAnimations, MatStepperModule } from '@angular/material/stepper';
 import { MatStepLabel } from '@angular/material/stepper';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormArray } from '@angular/forms';
 import {A11yModule} from '@angular/cdk/a11y';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {ClipboardModule} from '@angular/cdk/clipboard';
@@ -54,6 +54,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+//import { MatTable } from '@angular/material/table';
 //import {MatF}
 const routeConfig: Routes=[
   {path:'', redirectTo: 'form', pathMatch:'full'},
@@ -71,7 +72,7 @@ const routeConfig: Routes=[
 FormsModule, ReactiveFormsModule,
     BrowserAnimationsModule,
 
- 
+   // FormArray,
     MaterialFileInputModule,
     A11yModule,
     CdkAccordionModule,

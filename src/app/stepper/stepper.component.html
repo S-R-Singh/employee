@@ -12,35 +12,35 @@
             <div>
             <mat-form-field [style.width]="'30%'">
                 <mat-label >First Name</mat-label>
-                <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+                <input matInput placeholder="First Name" formControlName="oneFirstName" required>
             </mat-form-field>
               <mat-form-field [style.width]="'30%'" >
                 <mat-label>Middle Name</mat-label>
-                <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+                <input matInput placeholder="Middle Name" formControlName="oneMiddleName" required>
               </mat-form-field>
               <mat-form-field [style.width]="'28%'" >
                 <mat-label>Last Name</mat-label>
-                <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+                <input matInput placeholder="Last Name" formControlName="oneLastName" required>
               </mat-form-field></div> <!-- <br/> -->
               <div>
                 <mat-form-field [style.width]="'30%'">
                     <mat-label >Email</mat-label>
-                    <input matInput placeholder="Email" formControlName="firstCtrl" required>
+                    <input matInput placeholder="Email" formControlName="oneEmail" required>
                 </mat-form-field>
                   <mat-form-field [style.width]="'30%'" >
                     <mat-label>Mobile Number</mat-label>
-                    <input matInput placeholder="Mobile" formControlName="firstCtrl" required>
+                    <input matInput placeholder="Mobile" formControlName="oneMobile" required>
                   </mat-form-field>
                   <mat-form-field [style.width]="'28%'" >
                     <mat-label>Contact Number</mat-label>
-                    <input matInput placeholder="Landline" formControlName="firstCtrl" required>
+                    <input matInput placeholder="Landline" formControlName="oneLandLine" required>
                   </mat-form-field></div>
                   <!-- only 2 formfields -->
                   <div></div>
                     <mat-form-field [style.width]="'45%'">
                         <mat-label >Birth Date</mat-label>
                         <!-- <mat-label>Choose a date</mat-label> -->
-                        <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="firstCtrl" required>
+                        <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="oneBirthDate" required>
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker>
                     </mat-datepicker>               
@@ -61,11 +61,11 @@
                       <div>
                         <mat-form-field [style.width]="'45%'">
                             <mat-label >Present Address</mat-label>
-                            <input matInput placeholder="Present Address" formControlName="firstCtrl" required>
+                            <input matInput placeholder="Present Address" formControlName="onePresentAddress" required>
                         </mat-form-field>
                           <mat-form-field [style.width]="'45%'" >
                             <mat-label>Permanent Address</mat-label>
-                            <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
+                            <input matInput placeholder="Permanent Address" formControlName="onePermanentAddress" required>
                           </mat-form-field>
                           </div>
                           
@@ -95,21 +95,21 @@
           <div>
           <mat-form-field [style.width]="'45%'">
               <mat-label >Bank Name</mat-label>
-              <input matInput placeholder="Bank Name" formControlName="firstCtrl" required>
+              <input matInput placeholder="Bank Name" formControlName="twoBankName" required>
           </mat-form-field>
             <mat-form-field [style.width]="'45%'" >
               <mat-label>Account Name</mat-label>
-              <input matInput placeholder="Account Name" formControlName="firstCtrl" required>
+              <input matInput placeholder="Account Name" formControlName="twoAccountName" required>
             </mat-form-field>
             </div> <!-- <br/> -->
             <div>
               <mat-form-field [style.width]="'45%'">
                   <mat-label >Bank Account Number</mat-label>
-                  <input matInput placeholder="Bank Account NUmber" formControlName="firstCtrl" required>
+                  <input matInput placeholder="Bank Account Number" formControlName="twoBankAccountNumber" required>
               </mat-form-field>
                 <mat-form-field [style.width]="'45%'" >
                   <mat-label>IFSC Code</mat-label>
-                  <input matInput placeholder="IFSC Code" formControlName="firstCtrl" required>
+                  <input matInput placeholder="IFSC Code" formControlName="twoIFSC" required>
                 </mat-form-field>
                </div>
                 <!-- only 2 formfields -->
@@ -124,11 +124,11 @@
                     <div>
                       <mat-form-field [style.width]="'45%'">
                           <mat-label >Aadhar Card Number</mat-label>
-                          <input matInput placeholder="Aadhar Card Number" formControlName="firstCtrl" required>
+                          <input matInput placeholder="Aadhar Card Number" formControlName="twoAadhar" required>
                       </mat-form-field>
                         <mat-form-field [style.width]="'45%'" >
                           <mat-label>Pan Card Number</mat-label>
-                          <input matInput placeholder="Pan Card Number" formControlName="firstCtrl" required>
+                          <input matInput placeholder="Pan Card Number" formControlName="twoPan" required>
                         </mat-form-field>
                         </div>
                       </mat-card>
@@ -148,11 +148,11 @@
         <div>
           <mat-form-field [style.width]="'45%'">
               <mat-label >Designation</mat-label>
-              <input matInput placeholder="Designation" formControlName="firstCtrl" required>
+              <input matInput placeholder="Designation" formControlName="threeDesignation" required>
           </mat-form-field>
             <mat-form-field [style.width]="'45%'" >
               <mat-label>Department</mat-label>
-              <input matInput placeholder="Department" formControlName="firstCtrl" required>
+              <input matInput placeholder="Department" formControlName="threeDepartment" required>
             </mat-form-field>
             </div> <!-- <br/> -->
             <div>
@@ -160,7 +160,7 @@
               <mat-form-field [style.width]="'20%'">
                   <mat-label>Experience</mat-label>
                     <mat-select 
-                    formControlName="firstCtrl"
+                    formControlName="threeExperience"
                     name="exp">
                       <mat-option>None</mat-option>
                       <mat-option *ngFor="let exp of exps" [value]="exps.values">
@@ -171,7 +171,7 @@
               <mat-form-field [style.width]="'20%'">
                 <mat-label>Experience</mat-label>
                   <mat-select 
-                  formControlName="firstCtrl"
+                  formControlName="threeExperience2"
                   name="exp">
                     <mat-option>None</mat-option>
                     <mat-option *ngFor="let exp of exps" [value]="exps.values">
@@ -181,7 +181,7 @@
             </mat-form-field>
                 <mat-form-field [style.width]="'45%'" >
                   <mat-label>Current Location</mat-label>
-                  <input matInput placeholder="Current Location" formControlName="firstCtrl" required>
+                  <input matInput placeholder="Current Location" formControlName="threeCurrentLocation" required>
                 </mat-form-field>
                 </div>
               <!-- only 2 formfields -->
@@ -189,7 +189,7 @@
                 <mat-form-field [style.width]="'45%'">
                     <mat-label >Skills</mat-label>
                     <mat-select 
-                    formControlName="firstCtrl"
+                    formControlName="threeSkills"
                     name="exp">
                       <mat-option>None</mat-option>
                       <mat-option *ngFor="let exp of exps" [value]="exps.values">
@@ -199,7 +199,7 @@
             </mat-form-field>
             <mat-form-field [style.width]="'45%'">
           
-                <ngx-mat-file-input formControlName="requiredfile" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
+                <ngx-mat-file-input formControlName="requiredfile2" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
                 <mat-icon matSuffix>folder</mat-icon>
                 <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
                   Please select a file
@@ -220,146 +220,124 @@
 <mat-step [stepControl]="firstFormGroup" label="Education"> 
     <form [formGroup]="firstFormGroup">
       <mat-card>
-        <mat-card-title align="Middle">Education Detail</mat-card-title>
-        <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
-        <div>
-        <mat-form-field [style.width]="'30%'">
-            <mat-label >First Name</mat-label>
-            <input matInput placeholder="First Name" formControlName="firstCtrl" required>
-        </mat-form-field>
-          <mat-form-field [style.width]="'30%'" >
-            <mat-label>Middle Name</mat-label>
-            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
-          </mat-form-field>
-          <mat-form-field [style.width]="'28%'" >
-            <mat-label>Last Name</mat-label>
-            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
-          </mat-form-field></div> <!-- <br/> -->
-          <div>
-            <mat-form-field [style.width]="'30%'">
-                <mat-label >Email</mat-label>
-                <input matInput placeholder="Email" formControlName="firstCtrl" required>
-            </mat-form-field>
-              <mat-form-field [style.width]="'30%'" >
-                <mat-label>Mobile Number</mat-label>
-                <input matInput placeholder="Mobile" formControlName="firstCtrl" required>
-              </mat-form-field>
-              <mat-form-field [style.width]="'28%'" >
-                <mat-label>Contact Number</mat-label>
-                <input matInput placeholder="Landline" formControlName="firstCtrl" required>
-              </mat-form-field></div>
-              <!-- only 2 formfields -->
-              <div></div>
-                <mat-form-field [style.width]="'45%'">
-                    <mat-label >Birth Date</mat-label>
-                    <!-- <mat-label>Choose a date</mat-label> -->
-                    <input matInput placeholder="Date" formControlName="firstCtrl" required>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker>
-                </mat-datepicker>               
-            </mat-form-field>
-            
-            <mat-form-field [style.width]="'45%'">
-          
-                <ngx-mat-file-input formControlName="requiredfile" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
-                <mat-icon matSuffix>folder</mat-icon>
-                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
-                  Please select a file
-                </mat-error> -->
-                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile')?.hasError('maxContentSize')">
-                  The total size must not exceed {{firstFormGroup.get('requiredfile')?.getError('maxContentSize').maxSize }} ({{firstFormGroup.get('requiredfile')?.getError('maxContentSize').actualSize
-                  }}).
-                </mat-error> -->
-              </mat-form-field>
-                  <div>
-                    <mat-form-field [style.width]="'45%'">
-                        <mat-label >Present Address</mat-label>
-                        <input matInput placeholder="Present Address" formControlName="firstCtrl" required>
-                    </mat-form-field>
-                      <mat-form-field [style.width]="'45%'" >
-                        <mat-label>Permanent Address</mat-label>
-                        <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
-                      </mat-form-field>
-                      </div>
-                    </mat-card>
+        <mat-card-title align="Middle">Education Detail</mat-card-title></mat-card>
       <div align="end">
-        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button> &nbsp;
         <button mat-raised-button color="primary" matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
 <!-- 5th stepper screen ahead -->
+
 <mat-step [stepControl]="firstFormGroup" label="Experience"> 
     <form [formGroup]="firstFormGroup">
       <mat-card>
         <mat-card-title align="Middle">Experience Detail</mat-card-title>
-        <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
-        <div>
-        <mat-form-field [style.width]="'30%'">
-            <mat-label >First Name</mat-label>
-            <input matInput placeholder="First Name" formControlName="firstCtrl" required>
-        </mat-form-field>
-          <mat-form-field [style.width]="'30%'" >
-            <mat-label>Middle Name</mat-label>
-            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
+       <div align="end">
+        <button mat-raised-button color="primary" type="button" (click)="addItem()"><mat-icon>add</mat-icon>Add Experience</button>
+      </div>
+      <br/>
+        <!-- table from material -->
+        
+<mat-card>
+  <div [formGroup]="firstFormGroup">
+    <div formArrayName="experienceArray">
+      <div *ngFor="let item of firstFormGroup.get('experienceArray')?.value; let i=index"
+          [formGroupName]="i">
+
+          <mat-form-field [style.width]="'20%'">
+              <input matInput placeholder="Company Name" formControlName="name"    >
+              <!-- <mat-error *ngIf="f?.controls[i].controls?.companyName.errors?.required">
+                  Company Name is required
+              </mat-error> -->
           </mat-form-field>
-          <mat-form-field [style.width]="'28%'" >
-            <mat-label>Last Name</mat-label>
-            <input matInput placeholder="Middle Name" formControlName="firstCtrl" required>
-          </mat-form-field></div> <!-- <br/> -->
-          <div>
-            <mat-form-field [style.width]="'30%'">
-                <mat-label >Email</mat-label>
-                <input matInput placeholder="Email" formControlName="firstCtrl" required>
+
+          <mat-form-field [style.width.px]="'20%'">
+              <input matInput placeholder="Position" formControlName="description"   >
+              <!-- <mat-error *ngIf="f?.controls[i].controls?.position.errors?.required">
+                  Position is required
+              </mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field [style.width.px]="'20%'">
+              <input matInput placeholder="Total Year" formControlName="price">
             </mat-form-field>
-              <mat-form-field [style.width]="'30%'" >
-                <mat-label>Mobile Number</mat-label>
-                <input matInput placeholder="Mobile" formControlName="firstCtrl" required>
-              </mat-form-field>
-              <mat-form-field [style.width]="'28%'" >
-                <mat-label>Contact Number</mat-label>
-                <input matInput placeholder="Landline" formControlName="firstCtrl" required>
-              </mat-form-field></div>
-              <!-- only 2 formfields -->
-              <div></div>
-                <mat-form-field [style.width]="'45%'">
-                    <mat-label >Birth Date</mat-label>
-                    <!-- <mat-label>Choose a date</mat-label> -->
-                    <input matInput placeholder="Date" formControlName="firstCtrl" required>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker>
-                </mat-datepicker>               
-            </mat-form-field>
-            
-            <mat-form-field [style.width]="'45%'">
+
+              <!-- <mat-error *ngIf="f?.controls[i].controls?.totalYear.errors?.required">
+                  Total Year  is required -->
+              <!-- </mat-error> -->
           
-                <ngx-mat-file-input formControlName="requiredfile" placeholder="Required input" valuePlaceholder="No file selected" required></ngx-mat-file-input>
-                <mat-icon matSuffix>folder</mat-icon>
-                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile').hasError('required')">
-                  Please select a file
-                </mat-error> -->
-                <!-- <mat-error *ngIf="firstFormGroup.get('requiredfile')?.hasError('maxContentSize')">
-                  The total size must not exceed {{firstFormGroup.get('requiredfile')?.getError('maxContentSize').maxSize }} ({{firstFormGroup.get('requiredfile')?.getError('maxContentSize').actualSize
-                  }}).
-                </mat-error> -->
-              </mat-form-field>
-                  <div>
-                    <mat-form-field [style.width]="'45%'">
-                        <mat-label >Present Address</mat-label>
-                        <input matInput placeholder="Present Address" formControlName="firstCtrl" required>
-                    </mat-form-field>
-                      <mat-form-field [style.width]="'45%'" >
-                        <mat-label>Permanent Address</mat-label>
-                        <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
-                      </mat-form-field>
-                      </div>
-                    </mat-card>
+          <!-- <mat-form-field [style.width.px]=320>
+              <input matInput placeholder="Last Ctc" formControlName="lastCTC"  [readonly]="readOnly"  >
+              <mat-error *ngIf="f?.controls[i].controls?.lastCTC.errors?.required">
+                  Last CTC  is required
+              </mat-error>
+          </mat-form-field> -->
+        </div></div></div>
+</mat-card>      
+</mat-card>
+</form>
+
+
+<!-- <form [formGroup]="firstFormGroup">
+  <div
+    formArrayName="experienceArray"
+    *ngFor="let array of firstFormGroup.get('experienceArray')?.value; let i = index;" [formGroupName]="i">
+
+  <div [formGroupName]="i">
+    <input formControlName="name" placeholder="Item name">
+    <input formControlName="description" placeholder="Item description">
+    <input formControlName="price" placeholder="Item price">
+  </div>
+</div></form> -->
+
+
+
+    
+        <!-- table from karma computing -->
+
+       
+
+<!-- <form [formGroup]="firstFormGroup">
+
+  <label>
+    Title: <input formControlName="title" />
+  </label>
+  <h2>Selling Points</h2>
+
+  <div formArrayName="selling_points">
+    <div *ngFor="let experienceArray of sellingPoints.controls; let pointIndex=index" [formGroupName]="pointIndex">
+    <label>
+      Selling Point: <input formControlName="point" />
+    </label>
+    <button type="button" (click)="deleteSellingPoint(pointIndex)">Delete Selling Point</button>
+    </div>
+  </div>
+</form> -->
+
+<!-- this works, needs delete on it -->
+<!-- <form [formGroup]="firstFormGroup">
+  <div
+    formArrayName="experienceArray"
+    *ngFor="let array of firstFormGroup.get('experienceArray')?.value; let i = index;">
+
+  <div [formGroupName]="i">
+    <input formControlName="name" placeholder="Item name">
+    <input formControlName="description" placeholder="Item description">
+    <input formControlName="price" placeholder="Item price">
+  </div>
+
+  
+  </div><button type="button" (click)="addItem()">Add Item</button>
+  
+</form> -->
+
+       <br/>
       <div align="end">
-        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button> &nbsp;
         <button mat-raised-button color="primary" matStepperNext>Next</button>
       </div>
-    </form>
-  </mat-step>
+  </mat-step>{{ this.firstFormGroup.value | json }}
 <!-- 6th stepper screen ahead -->
 
 <mat-step [stepControl]="firstFormGroup" label="Education"> 
@@ -372,7 +350,7 @@
                 <mat-form-field [style.width]="'45%'">
                     <mat-label >Joining Date</mat-label>
                     <!-- <mat-label>Choose a date</mat-label> -->
-                    <input matInput placeholder="Date" formControlName="firstCtrl" required>
+                    <input matInput placeholder="Date" formControlName="sixJoiningDate" required>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker>
                 </mat-datepicker>               
@@ -380,7 +358,7 @@
             <mat-form-field [style.width]="'45%'">
               <mat-label >Next Appraisal Date</mat-label>
               <!-- <mat-label>Choose a date</mat-label> -->
-              <input matInput placeholder="Date" formControlName="firstCtrl" required>
+              <input matInput placeholder="Date" formControlName="sixAppraisalDate" required>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker>
           </mat-datepicker>               
@@ -389,7 +367,7 @@
                   <div>
                       <mat-form-field [style.width]="'45%'" >
                         <mat-label>Current CTC</mat-label>
-                        <input matInput placeholder="Permanent Address" formControlName="firstCtrl" required>
+                        <input matInput placeholder="Permanent Address" formControlName="sixCTC" required>
                       </mat-form-field>
                       </div>
                     </mat-card>
